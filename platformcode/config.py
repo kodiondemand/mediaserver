@@ -34,6 +34,22 @@ def get_addon_version(linea_inicio=0, total_lineas=2, with_fix=False):
         version = aux[0]
     return version
 
+def get_channel_url(name):
+    try:
+        try:
+            import json
+        except:
+            import simplejson as json
+        ROOT_DIR = get_runtime_path()
+        LOCAL_FILE = os.path.join(ROOT_DIR, "channels.json")
+        with open(LOCAL_FILE) as f:
+            data = json.load(f)
+            if data[name] is not None:
+                return data[name]
+            else:
+                return get_setting("channel_host", name)
+    except:
+        return get_setting("channel_host", name)
 
 def get_platform(full_version=False):
     # full_version solo es util en xbmc/kodi

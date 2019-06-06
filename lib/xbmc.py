@@ -4,8 +4,8 @@
 # y no tener que poner excepciones en el código del addon
 
 def getInfoLabel(parm):
-    if parm == 'Container.PluginName': return 'plugin.video.alfa'
-    elif parm == 'Container.FolderName': return 'Alfa'
+    if parm == 'Container.PluginName': return 'plugin.video.kod'
+    elif parm == 'Container.FolderName': return 'kod'
 
     return ''
 

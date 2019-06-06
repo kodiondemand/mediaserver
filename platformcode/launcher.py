@@ -96,7 +96,7 @@ def run(item):
     elif item.action == "script":
         from core import tmdb
         if tmdb.drop_bd():
-            platformtools.dialog_notification("Alfa", "caché eliminada", time=2000, sound=False)
+            platformtools.dialog_notification("kod", "caché eliminada", time=2000, sound=False)
 
     # Todas las demas las intenta ejecturaren el siguiente orden:
     # 1. En el canal
@@ -363,7 +363,7 @@ def add_to_favorites(item):
     if title is not None:
         item.title = title
         favorites.addFavourite(item)
-        platformtools.dialog_ok("Alfa", config.get_localized_string(
+        platformtools.dialog_ok("kod", config.get_localized_string(
             30102) + "\n" + item.title + "\n" + config.get_localized_string(30108))
     return
 
@@ -372,7 +372,7 @@ def remove_from_favorites(item):
     from channels import favorites
     # En "extra" está el nombre del fichero en favoritos
     favorites.delFavourite(item.extra)
-    platformtools.dialog_ok("Alfa",
+    platformtools.dialog_ok("kod",
                             config.get_localized_string(30102) + "\n" + item.title + "\n" + config.get_localized_string(
                                 30105))
     platformtools.itemlist_refresh()
@@ -396,7 +396,7 @@ def add_to_library(item):
     if not item.fulltitle == "":
         item.title = item.fulltitle
     videolibrarytools.savelibrary(item)
-    platformtools.dialog_ok("Alfa",
+    platformtools.dialog_ok("kod",
                             config.get_localized_string(30101) + "\n" + item.title + "\n" + config.get_localized_string(
                                 30135))
     return
@@ -473,7 +473,7 @@ def play_menu(item):
             platformtools.dialog_ok("No puedes ver ese vídeo porque...", motivo + "\n" + item.url)
         else:
             platformtools.dialog_ok("No puedes ver ese vídeo porque...",
-                                    "El servidor donde está alojado no está\nsoportado en Alfa todavía\n" + item.url)
+                                    "El servidor donde está alojado no está\nsoportado en kod todavía\n" + item.url)
 
     if len(opciones) == 0:
         return

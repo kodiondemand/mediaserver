@@ -29,23 +29,26 @@ logging.setLoggerClass(ExtendedLogger)
 logging.basicConfig(level=logging.DEBUG,
                     format='%(levelname)-5s %(asctime)s [%(filename)-40s] %(message)s',
                     datefmt="%d/%m/%y-%H:%M:%S",
-                    filename=os.path.join(config.get_data_path(), "alfa.log"),
+                    filename=os.path.join(config.get_data_path(), "kod.log"),
                     filemode='w')
 logger_object = logging.getLogger("mediaserver")
 
 
 def info(texto=""):
-    if config.get_setting("debug"):
-        logger_object.info(unicode(str(texto), "utf-8", "ignore").replace("\n", "\n" + " " * 67))
+    print texto
+    #if config.get_setting("debug"):
+    #    logger_object.info(unicode(str(texto), "utf-8", "ignore").replace("\n", "\n" + " " * 67))
 
 
 def debug(texto=""):
-    if config.get_setting("debug"):
-        logger_object.debug(unicode(str(texto), "utf-8", "ignore").replace("\n", "\n" + " " * 67))
+    print texto
+    #if config.get_setting("debug"):
+    #    logger_object.debug(unicode(str(texto), "utf-8", "ignore").replace("\n", "\n" + " " * 67))
 
 
 def error(texto=""):
-    logger_object.error(unicode(str(texto), "utf-8", "ignore").replace("\n", "\n" + " " * 67))
+    print texto
+    #logger_object.error(unicode(str(texto), "utf-8", "ignore").replace("\n", "\n" + " " * 67))
 
 
 class WebErrorException(Exception):

@@ -8,7 +8,7 @@ import re
 import sys
 
 PLATFORM_NAME = "mediaserver"
-PLUGIN_NAME = "alfa"
+PLUGIN_NAME = "kod"
 
 settings_dic = {}
 adult_setting = {}
@@ -27,8 +27,8 @@ def get_addon_version(linea_inicio=0, total_lineas=2, with_fix=False):
         data.append(line)
     f.close()
     data1 = "".join(data)
-    # <addon id="plugin.video.alfa" name="Alfa" version="2.5.21" provider-name="Alfa Addon">
-    aux = re.findall('<addon id="plugin.video.alfa" name="Alfa" version="([^"]+)"', data1, re.MULTILINE | re.DOTALL)
+    # <addon id="plugin.video.kod" name="kod" version="2.5.21" provider-name="kod Addon">
+    aux = re.findall('<addon id="plugin.video.kod" name="kod" version="([^"]+)"', data1, re.MULTILINE | re.DOTALL)
     version = "???"
     if len(aux) > 0:
         version = aux[0]
@@ -215,7 +215,7 @@ def set_setting(name, value, channel="", server=""):
     canal 'channel'.
     Devuelve el valor cambiado o None si la asignacion no se ha podido completar.
 
-    Si se especifica el nombre del canal busca en la ruta \addon_data\plugin.video.alfa\settings_channels el
+    Si se especifica el nombre del canal busca en la ruta \addon_data\plugin.video.kod\settings_channels el
     archivo channel_data.json y establece el parametro 'name' al valor indicado por 'value'. Si el archivo
     channel_data.json no existe busca en la carpeta channels el archivo channel.xml y crea un archivo channel_data.json
     antes de modificar el parametro 'name'.
@@ -314,7 +314,7 @@ def get_runtime_path():
 
 
 def get_data_path():
-    dev = os.path.join(os.path.expanduser("~"), ".alfa")
+    dev = os.path.join(os.path.expanduser("~"), ".kod")
 
     # Crea el directorio si no existe
     if not os.path.exists(dev):

@@ -1,5 +1,5 @@
 # setup.py
-# Para crear el ejecutable de Alfa mediaserver en windows
+# Para crear el ejecutable de kod mediaserver en windows
 # Se usa py2exe
 # Linea de comandos para la creacion:  python setup.py py2exe -p channels,servers,lib,platformcode
 from distutils.core import setup
@@ -13,6 +13,6 @@ setup(packages=['channels','servers','lib','platformcode','platformcode/controll
                   ("servers",glob.glob("servers\\*.json")),
                   ("",glob.glob("addon.xml")),
                  ],
-      console=["alfa.py"]
+      console=["kod.py"]
       )
 

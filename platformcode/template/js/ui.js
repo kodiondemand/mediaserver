@@ -78,12 +78,12 @@ function html_play(url, title) {
 function set_category(category) {
     var el = document.getElementById("header");
     if (category) {
-        el.getElementById("heading").innerHTML = "alfa / " + category;
-        document.title = "alfa / " + category;
+        el.getElementById("heading").innerHTML = "kod / " + category;
+        document.title = "kod / " + category;
     }
     else {
-        el.getElementById("heading").innerHTML = "alfa";
-        document.title = "alfa";
+        el.getElementById("heading").innerHTML = "kod";
+        document.title = "kod";
     };
 };
 

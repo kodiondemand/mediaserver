@@ -33,7 +33,7 @@ class html(Controller):
             else:
                 self.client_ip = handler.client_address[0]
             self.send_message({"action": "connect",
-                               "data": {"version": "Alfa %s" % version,
+                               "data": {"version": "kod %s" % version,
                                         "date": "--/--/----"}})
             t = threading.Thread(target=launcher.start, name=ID)
             t.setDaemon(True)
@@ -508,7 +508,7 @@ class platform(Platformtools):
                    temp_path=os.path.join(config.get_data_path(), "torrent"))
 
         # Mostramos el progreso
-        progreso = self.dialog_progress("Alfa - Torrent", "Iniciando...")
+        progreso = self.dialog_progress("kod - Torrent", "Iniciando...")
 
         # Mientras el progreso no sea cancelado ni el cliente cerrado
         while not progreso.iscanceled() and not c.closed:
@@ -550,7 +550,7 @@ class platform(Platformtools):
                         time.sleep(1)
 
                     # Cuando este cerrado,  Volvemos a mostrar el dialogo
-                    progreso = self.dialog_progress("Alfa - Torrent", "Iniciando...")
+                    progreso = self.dialog_progress("kod - Torrent", "Iniciando...")
 
             except:
                 import traceback

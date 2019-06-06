@@ -44,7 +44,7 @@ if sys.version_info < (2, 7, 11):
 def show_info():
     os.system('cls' if os.name == 'nt' else 'clear')
     print ("--------------------------------------------------------------------")
-    print ("Alfa %s Iniciado" %version)
+    print ("kod %s Iniciado" %version)
     print ("La URL para acceder es http://%s:%s" % (myip, http_port))
     print ("--------------------------------------------------------------------")
     print ("Runtime Path      : " + config.get_runtime_path())
@@ -71,7 +71,7 @@ def start():
 
         # Da por levantado el servicio
         logger.info("--------------------------------------------------------------------")
-        logger.info("Alfa %s Iniciado" %version)
+        logger.info("kod %s Iniciado" %version)
         logger.info("La URL para acceder es http://%s:%s" % (myip, http_port))
         logger.info("--------------------------------------------------------------------")
         logger.info("Runtime Path      : " + config.get_runtime_path())
@@ -94,7 +94,7 @@ def start():
     except KeyboardInterrupt:
         print 'Deteniendo el servidor HTTP...'
         HTTPAndWSServer.stop()
-        print 'Alfa Detenido'
+        print 'kod Detenido'
         flag = False
 
 

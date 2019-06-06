@@ -155,7 +155,7 @@ def show_error_message(err_info):
             Comprueba el log para ver mas detalles del error.")
     else:
         platformtools.dialog_ok(
-            "Se ha producido un error en Alfa",
+            "Se ha producido un error en kod",
             "Comprueba el log para ver mas detalles del error.")
 
 
